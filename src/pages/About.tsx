@@ -135,7 +135,7 @@ const About = () => {
                   <Button asChild size="lg" className="bg-white text-green-600 hover:bg-gray-100 font-semibold">
                     <Link to="/auth">Get Started</Link>
                   </Button>
-                  <Button asChild variant="outline" size="lg" className="border-white text-white hover:bg-white hover:text-green-600">
+                  <Button asChild variant="outline" size="lg" className="border-white bg-green-600 text-white hover:bg-white hover:text-green-600">
                     <Link to="/properties">Browse Properties</Link>
                   </Button>
                 </>
@@ -144,7 +144,7 @@ const About = () => {
                   <Button asChild size="lg" className="bg-white text-green-600 hover:bg-gray-100 font-semibold">
                     <Link to="/tenant-dashboard">Go to Dashboard</Link>
                   </Button>
-                  <Button asChild variant="outline" size="lg" className="border-white text-white hover:bg-white hover:text-green-600">
+                  <Button asChild variant="outline" size="lg" className="border-white bg-green-600 text-white hover:bg-white hover:text-green-600">
                     <Link to="/properties">Browse Properties</Link>
                   </Button>
                 </>
