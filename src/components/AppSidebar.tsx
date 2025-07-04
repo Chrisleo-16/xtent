@@ -46,6 +46,7 @@ export function AppSidebar({ role }: AppSidebarProps) {
 
   const handleSignOut = () => {
     try {
+      localStorage.removeItem("sb-oenvmarmaroyeroxykak-auth-token", JSON.stringify(response.data.access_token));
       window.location.replace("/");
     } catch (error) {
       console.error('Error signing out:', error);
