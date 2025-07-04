@@ -41,12 +41,12 @@ interface AppSidebarProps {
 }
 
 export function AppSidebar({ role }: AppSidebarProps) {
-  const { user, signOut } = useAuth();
+  const { user } = useAuth();
   const location = useLocation();
 
-  const handleSignOut = async () => {
+  const handleSignOut = () => {
     try {
-      await signOut();
+      window.location.replace("/");
     } catch (error) {
       console.error('Error signing out:', error);
     }
