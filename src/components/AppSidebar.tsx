@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useAuth } from '@/hooks/useAuth';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
@@ -41,13 +41,15 @@ interface AppSidebarProps {
 }
 
 export function AppSidebar({ role }: AppSidebarProps) {
-  const { user } = useAuth();
+  const { user, signOut } = useAuth();
   const location = useLocation();
+  const navigate =  useNavigate()
 
-  const handleSignOut = () => {
+  const handleSignOut = async () => {
     try {
-      localStorage.removeItem("sb-oenvmarmaroyeroxykak-auth-token", JSON.stringify(response.data.access_token));
-      window.location.replace("/");
+      await supabase.auth.signOut()
+      localStorage.clear();
+      navigate("/");
     } catch (error) {
       console.error('Error signing out:', error);
     }
